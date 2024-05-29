@@ -1,0 +1,6 @@
+FROM ruby:3.2.3
+
+WORKDIR opt/app
+
+COPY . .
+RUN bundle install
