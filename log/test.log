@@ -6429,3 +6429,1617 @@ Processing by MailboxesController#destroy as HTML
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
 Completed 204 No Content in 2ms (ActiveRecord: 0.6ms | Allocations: 659)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started GET "/domains" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by DomainsController#index as HTML
+  [1m[36mDomain Load (0.6ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+Completed 200 OK in 20ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 5773)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started POST "/domains" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"domain_name"=>"example.com", "password_expiration_frequency"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.6ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.551962"], ["updated_at", "2024-05-29 12:38:49.551962"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 8ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 4823)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+Started POST "/domains" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"domain_name"=>nil}}
+Completed 422 Unprocessable Entity in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms | Allocations: 2867)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.562941"], ["updated_at", "2024-05-29 12:38:49.562941"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/190" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"190"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 190], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 565)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+Started GET "/domains/9999" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"9999"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 9999], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms | Allocations: 213)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.571405"], ["updated_at", "2024-05-29 12:38:49.571405"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/191" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by DomainsController#update as HTML
+  Parameters: {"domain"=>{"password_expiration_frequency"=>"[FILTERED]"}, "id"=>"191"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 191], ["LIMIT", 1]]
+  [1m[36mCACHE Domain Load (0.0ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 191], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Update (0.3ms)[0m  [1m[33mUPDATE "domains" SET "password_expiration_frequency" = $1, "updated_at" = $2 WHERE "domains"."id" = $3[0m  [["password_expiration_frequency", "[FILTERED]"], ["updated_at", "2024-05-29 12:38:49.573445"], ["id", 191]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 891)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.576147"], ["updated_at", "2024-05-29 12:38:49.576147"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/192" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by DomainsController#update as HTML
+  Parameters: {"domain"=>{"domain_name"=>nil}, "id"=>"192"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+  [1m[36mCACHE Domain Load (0.0ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 192], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 728)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.580842"], ["updated_at", "2024-05-29 12:38:49.580842"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/domains/193" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by DomainsController#destroy as HTML
+  Parameters: {"id"=>"193"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 193], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Destroy (0.5ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = $1[0m  [["id", 193]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.9ms | Allocations: 391)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.586159"], ["updated_at", "2024-05-29 12:38:49.586159"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/194/mailboxes" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by MailboxesController#index as HTML
+  Parameters: {"domain_id"=>"194"}
+  [1m[36mDomain Load (0.4ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 194], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1[0m  [["domain_id", 194]]
+Completed 200 OK in 13ms (Views: 3.3ms | ActiveRecord: 1.3ms | Allocations: 6099)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.604239"], ["updated_at", "2024-05-29 12:38:49.604239"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/domains/195/mailboxes" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by MailboxesController#create as HTML
+  Parameters: {"mailbox"=>{"username"=>"user", "password"=>"[FILTERED]"}, "domain_id"=>"195"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 195], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMailbox Create (0.5ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 195], ["username", "user"], ["password", "[FILTERED]"], ["scheduled_password_expiration", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.613207"], ["updated_at", "2024-05-29 12:38:49.613207"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 9ms (Views: 0.3ms | ActiveRecord: 2.3ms | Allocations: 4509)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.616679"], ["updated_at", "2024-05-29 12:38:49.616679"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/domains/196/mailboxes" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by MailboxesController#create as HTML
+  Parameters: {"mailbox"=>{"username"=>nil}, "domain_id"=>"196"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 196], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 1184)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.620529"], ["updated_at", "2024-05-29 12:38:49.620529"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 197], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.2ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 197], ["username", "user"], ["password", "[FILTERED]"], ["scheduled_password_expiration", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.622240"], ["updated_at", "2024-05-29 12:38:49.622240"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/197/mailboxes/112" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by MailboxesController#show as HTML
+  Parameters: {"domain_id"=>"197", "id"=>"112"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 197], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 197], ["id", 112], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 692)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.626842"], ["updated_at", "2024-05-29 12:38:49.626842"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/198/mailboxes/999" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by MailboxesController#show as HTML
+  Parameters: {"domain_id"=>"198", "id"=>"999"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 198], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.3ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 198], ["id", 999], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 559)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.631885"], ["updated_at", "2024-05-29 12:38:49.631885"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.2ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 199], ["username", "user"], ["password", "[FILTERED]"], ["scheduled_password_expiration", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.633378"], ["updated_at", "2024-05-29 12:38:49.633378"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/199/mailboxes/113" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by MailboxesController#update as HTML
+  Parameters: {"mailbox"=>{"password"=>"[FILTERED]"}, "domain_id"=>"199", "id"=>"113"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 199], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.1ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 199], ["id", 113], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMailbox Update (0.1ms)[0m  [1m[33mUPDATE "mailboxes" SET "password" = $1, "updated_at" = $2 WHERE "mailboxes"."id" = $3[0m  [["password", "[FILTERED]"], ["updated_at", "2024-05-29 12:38:49.635901"], ["id", 113]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 990)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.1ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.638135"], ["updated_at", "2024-05-29 12:38:49.638135"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 200], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.2ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 200], ["username", "user"], ["password", "[FILTERED]"], ["scheduled_password_expiration", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.639600"], ["updated_at", "2024-05-29 12:38:49.639600"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/200/mailboxes/114" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by MailboxesController#update as HTML
+  Parameters: {"mailbox"=>{"username"=>nil}, "domain_id"=>"200", "id"=>"114"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 200], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 200], ["id", 114], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 976)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.644167"], ["updated_at", "2024-05-29 12:38:49.644167"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 201], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.3ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 201], ["username", "user"], ["password", "[FILTERED]"], ["scheduled_password_expiration", "[FILTERED]"], ["created_at", "2024-05-29 12:38:49.646120"], ["updated_at", "2024-05-29 12:38:49.646120"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/domains/201/mailboxes/115" for 127.0.0.1 at 2024-05-29 12:38:49 +0000
+Processing by MailboxesController#destroy as HTML
+  Parameters: {"domain_id"=>"201", "id"=>"115"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 201], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.1ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 201], ["id", 115], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMailbox Destroy (0.1ms)[0m  [1m[31mDELETE FROM "mailboxes" WHERE "mailboxes"."id" = $1[0m  [["id", 115]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.5ms | Allocations: 659)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (1.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.3ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by DomainsController#index as HTML
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 5789)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.9ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "mailboxes" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/domains" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"domain_name"=>"example.com", "password_expiration_frequency"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.6ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.232689"], ["updated_at", "2024-05-29 12:43:50.232689"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 201 Created in 8ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 4814)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.8ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/domains" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"domain_name"=>nil}}
+Completed 422 Unprocessable Entity in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 2865)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (8.4ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.271589"], ["updated_at", "2024-05-29 12:43:50.271589"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/domains/1" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 566)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.6ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.7ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/9999" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"9999"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 9999], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 243)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.6ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.338537"], ["updated_at", "2024-05-29 12:43:50.338537"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started PUT "/domains/1" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by DomainsController#update as HTML
+  Parameters: {"domain"=>{"password_expiration_frequency"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Domain Load (0.0ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Update (0.2ms)[0m  [1m[33mUPDATE "domains" SET "password_expiration_frequency" = $1, "updated_at" = $2 WHERE "domains"."id" = $3[0m  [["password_expiration_frequency", 60], ["updated_at", "2024-05-29 12:43:50.341292"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 886)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.3ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.357135"], ["updated_at", "2024-05-29 12:43:50.357135"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started PUT "/domains/1" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by DomainsController#update as HTML
+  Parameters: {"domain"=>{"domain_name"=>nil}, "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Domain Load (0.0ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 725)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.0ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.374453"], ["updated_at", "2024-05-29 12:43:50.374453"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started DELETE "/domains/1" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by DomainsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Destroy (0.2ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.5ms | Allocations: 390)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.2ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.392215"], ["updated_at", "2024-05-29 12:43:50.392215"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/domains/1/mailboxes" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by MailboxesController#index as HTML
+  Parameters: {"domain_id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.1ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1[0m  [["domain_id", 1]]
+Completed 200 OK in 10ms (Views: 2.9ms | ActiveRecord: 1.1ms | Allocations: 6091)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.8ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.418572"], ["updated_at", "2024-05-29 12:43:50.418572"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started POST "/domains/1/mailboxes" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by MailboxesController#create as HTML
+  Parameters: {"mailbox"=>{"username"=>"user", "password"=>"[FILTERED]"}, "domain_id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mMailbox Create (0.4ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:43:50.425509"], ["updated_at", "2024-05-29 12:43:50.425509"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 201 Created in 7ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 4568)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.9ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.441433"], ["updated_at", "2024-05-29 12:43:50.441433"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started POST "/domains/1/mailboxes" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by MailboxesController#create as HTML
+  Parameters: {"mailbox"=>{"username"=>nil}, "domain_id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 1183)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.1ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.459310"], ["updated_at", "2024-05-29 12:43:50.459310"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.3ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:43:50.461355"], ["updated_at", "2024-05-29 12:43:50.461355"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by MailboxesController#show as HTML
+  Parameters: {"domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.1ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 691)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.8ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.479812"], ["updated_at", "2024-05-29 12:43:50.479812"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started GET "/domains/1/mailboxes/999" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by MailboxesController#show as HTML
+  Parameters: {"domain_id"=>"1", "id"=>"999"}
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.4ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 999], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 558)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (8.0ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.496894"], ["updated_at", "2024-05-29 12:43:50.496894"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.5ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:43:50.498963"], ["updated_at", "2024-05-29 12:43:50.498963"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started PUT "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by MailboxesController#update as HTML
+  Parameters: {"mailbox"=>{"password"=>"[FILTERED]"}, "domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mMailbox Update (0.2ms)[0m  [1m[33mUPDATE "mailboxes" SET "password" = $1, "updated_at" = $2 WHERE "mailboxes"."id" = $3[0m  [["password", "newpassword"], ["updated_at", "2024-05-29 12:43:50.503043"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 987)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.9ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.518890"], ["updated_at", "2024-05-29 12:43:50.518890"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.3ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:43:50.520867"], ["updated_at", "2024-05-29 12:43:50.520867"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started PUT "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by MailboxesController#update as HTML
+  Parameters: {"mailbox"=>{"username"=>nil}, "domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 975)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.7ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:43:50.541300"], ["updated_at", "2024-05-29 12:43:50.541300"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.3ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:43:50.543218"], ["updated_at", "2024-05-29 12:43:50.543218"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Started DELETE "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:43:50 +0000
+Processing by MailboxesController#destroy as HTML
+  Parameters: {"domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.1ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2[0m
+  [1m[36mMailbox Destroy (0.1ms)[0m  [1m[31mDELETE FROM "mailboxes" WHERE "mailboxes"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_2[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.5ms | Allocations: 658)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.1ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.7ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/domains" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by DomainsController#index as HTML
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 5788)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (12.1ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/domains" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"domain_name"=>"example.com", "password_expiration_frequency"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:24.686185"], ["updated_at", "2024-05-29 12:47:24.686185"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 8ms (Views: 0.2ms | ActiveRecord: 3.0ms | Allocations: 4837)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.6ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/domains" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"domain_name"=>nil}}
+Completed 422 Unprocessable Entity in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 2868)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.3ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.5ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:24.726758"], ["updated_at", "2024-05-29 12:47:24.726758"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/1" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 566)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.7ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/domains/9999" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"9999"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 9999], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 242)
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.7ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:24.803162"], ["updated_at", "2024-05-29 12:47:24.803162"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/1" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by DomainsController#update as HTML
+  Parameters: {"domain"=>{"password_expiration_frequency"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Domain Load (0.0ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Update (0.2ms)[0m  [1m[33mUPDATE "domains" SET "password_expiration_frequency" = $1, "updated_at" = $2 WHERE "domains"."id" = $3[0m  [["password_expiration_frequency", 60], ["updated_at", "2024-05-29 12:47:24.806121"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 888)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.0ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:24.825420"], ["updated_at", "2024-05-29 12:47:24.825420"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/1" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by DomainsController#update as HTML
+  Parameters: {"domain"=>{"domain_name"=>nil}, "id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Domain Load (0.0ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 725)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (12.2ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:24.848666"], ["updated_at", "2024-05-29 12:47:24.848666"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/domains/1" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by DomainsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Destroy (0.3ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.5ms | Allocations: 390)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.7ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:24.868142"], ["updated_at", "2024-05-29 12:47:24.868142"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/1/mailboxes" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by MailboxesController#index as HTML
+  Parameters: {"domain_id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.3ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1[0m  [["domain_id", 1]]
+Completed 200 OK in 10ms (Views: 3.1ms | ActiveRecord: 1.3ms | Allocations: 6091)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.8ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:24.897233"], ["updated_at", "2024-05-29 12:47:24.897233"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/domains/1/mailboxes" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by MailboxesController#create as HTML
+  Parameters: {"mailbox"=>{"username"=>"user", "password"=>"[FILTERED]"}, "domain_id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMailbox Create (0.5ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:47:24.904300"], ["updated_at", "2024-05-29 12:47:24.904300"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 7ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 4568)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.4ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:24.923244"], ["updated_at", "2024-05-29 12:47:24.923244"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/domains/1/mailboxes" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by MailboxesController#create as HTML
+  Parameters: {"mailbox"=>{"username"=>nil}, "domain_id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1183)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.1ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:24.943437"], ["updated_at", "2024-05-29 12:47:24.943437"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.5ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:47:24.946253"], ["updated_at", "2024-05-29 12:47:24.946253"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by MailboxesController#show as HTML
+  Parameters: {"domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 691)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.4ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:24.966418"], ["updated_at", "2024-05-29 12:47:24.966418"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/1/mailboxes/999" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by MailboxesController#show as HTML
+  Parameters: {"domain_id"=>"1", "id"=>"999"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 999], ["LIMIT", 1]]
+Completed 404 Not Found in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 558)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (12.1ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:24.988359"], ["updated_at", "2024-05-29 12:47:24.988359"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.5ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:47:24.990930"], ["updated_at", "2024-05-29 12:47:24.990930"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:47:24 +0000
+Processing by MailboxesController#update as HTML
+  Parameters: {"mailbox"=>{"password"=>"[FILTERED]"}, "domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.3ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMailbox Update (0.2ms)[0m  [1m[33mUPDATE "mailboxes" SET "password" = $1, "updated_at" = $2 WHERE "mailboxes"."id" = $3[0m  [["password", "newpassword"], ["updated_at", "2024-05-29 12:47:24.995650"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 987)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (12.9ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.5ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:25.016391"], ["updated_at", "2024-05-29 12:47:25.016391"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.8ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:47:25.019935"], ["updated_at", "2024-05-29 12:47:25.019935"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:47:25 +0000
+Processing by MailboxesController#update as HTML
+  Parameters: {"mailbox"=>{"username"=>nil}, "domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.4ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 975)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.3ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:25.045709"], ["updated_at", "2024-05-29 12:47:25.045709"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.4ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:47:25.048810"], ["updated_at", "2024-05-29 12:47:25.048810"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:47:25 +0000
+Processing by MailboxesController#destroy as HTML
+  Parameters: {"domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMailbox Destroy (0.1ms)[0m  [1m[31mDELETE FROM "mailboxes" WHERE "mailboxes"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 3ms (ActiveRecord: 0.6ms | Allocations: 658)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.5ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.1ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/domains" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by DomainsController#index as HTML
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDomain Load (0.3ms)[0m  [1m[34mSELECT "domains".* FROM "domains"[0m
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 5788)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.2ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/domains" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"domain_name"=>"example.com", "password_expiration_frequency"=>"[FILTERED]"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.540097"], ["updated_at", "2024-05-29 12:47:32.540097"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 7ms (Views: 0.3ms | ActiveRecord: 2.8ms | Allocations: 4837)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.4ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/domains" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by DomainsController#create as HTML
+  Parameters: {"domain"=>{"domain_name"=>nil}}
+Completed 422 Unprocessable Entity in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 2868)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.8ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.579960"], ["updated_at", "2024-05-29 12:47:32.579960"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/1" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.3ms | Allocations: 566)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.8ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/domains/9999" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by DomainsController#show as HTML
+  Parameters: {"id"=>"9999"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mDomain Load (0.5ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 9999], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 242)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.4ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.2ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.4ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.660363"], ["updated_at", "2024-05-29 12:47:32.660363"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/1" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by DomainsController#update as HTML
+  Parameters: {"domain"=>{"password_expiration_frequency"=>"[FILTERED]"}, "id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Domain Load (0.0ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Update (0.2ms)[0m  [1m[33mUPDATE "domains" SET "password_expiration_frequency" = $1, "updated_at" = $2 WHERE "domains"."id" = $3[0m  [["password_expiration_frequency", 60], ["updated_at", "2024-05-29 12:47:32.664884"], ["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 888)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.9ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.681818"], ["updated_at", "2024-05-29 12:47:32.681818"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/1" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by DomainsController#update as HTML
+  Parameters: {"domain"=>{"domain_name"=>nil}, "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Domain Load (0.0ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 725)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (10.9ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.701388"], ["updated_at", "2024-05-29 12:47:32.701388"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/domains/1" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by DomainsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Destroy (0.3ms)[0m  [1m[31mDELETE FROM "domains" WHERE "domains"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.6ms | Allocations: 390)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.0ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.721879"], ["updated_at", "2024-05-29 12:47:32.721879"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/1/mailboxes" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by MailboxesController#index as HTML
+  Parameters: {"domain_id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1[0m  [["domain_id", 1]]
+Completed 200 OK in 9ms (Views: 2.5ms | ActiveRecord: 1.2ms | Allocations: 6091)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (12.8ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.752061"], ["updated_at", "2024-05-29 12:47:32.752061"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/domains/1/mailboxes" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by MailboxesController#create as HTML
+  Parameters: {"mailbox"=>{"username"=>"user", "password"=>"[FILTERED]"}, "domain_id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMailbox Create (0.5ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:47:32.759074"], ["updated_at", "2024-05-29 12:47:32.759074"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 7ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 4568)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (13.5ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.780384"], ["updated_at", "2024-05-29 12:47:32.780384"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/domains/1/mailboxes" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by MailboxesController#create as HTML
+  Parameters: {"mailbox"=>{"username"=>nil}, "domain_id"=>"1"}
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1183)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (13.1ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.802841"], ["updated_at", "2024-05-29 12:47:32.802841"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.4ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:47:32.805096"], ["updated_at", "2024-05-29 12:47:32.805096"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by MailboxesController#show as HTML
+  Parameters: {"domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 691)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.4ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.825763"], ["updated_at", "2024-05-29 12:47:32.825763"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/domains/1/mailboxes/999" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by MailboxesController#show as HTML
+  Parameters: {"domain_id"=>"1", "id"=>"999"}
+  [1m[36mDomain Load (0.7ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.3ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 999], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 558)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.3ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (9.9ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.846781"], ["updated_at", "2024-05-29 12:47:32.846781"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.4ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:47:32.848783"], ["updated_at", "2024-05-29 12:47:32.848783"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by MailboxesController#update as HTML
+  Parameters: {"mailbox"=>{"password"=>"[FILTERED]"}, "domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.1ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMailbox Update (0.2ms)[0m  [1m[33mUPDATE "mailboxes" SET "password" = $1, "updated_at" = $2 WHERE "mailboxes"."id" = $3[0m  [["password", "newpassword"], ["updated_at", "2024-05-29 12:47:32.851754"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 987)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.4ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.2ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.869584"], ["updated_at", "2024-05-29 12:47:32.869584"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.3ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:47:32.871397"], ["updated_at", "2024-05-29 12:47:32.871397"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by MailboxesController#update as HTML
+  Parameters: {"mailbox"=>{"username"=>nil}, "domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+Completed 422 Unprocessable Entity in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 975)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" DISABLE TRIGGER ALL;ALTER TABLE "domains" DISABLE TRIGGER ALL;ALTER TABLE "mailboxes" DISABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34m            SELECT schemaname || '.' || tablename
+            FROM pg_tables
+            WHERE
+              tablename !~ '_prt_' AND
+              tablename <> 'schema_migrations'
+  AND tablename <> 'ar_internal_metadata'
+ AND
+              schemaname = ANY (current_schemas(false))
+[0m
+  [1m[35m (0.2ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'mail_box_test'[0m
+  [1m[35m (11.3ms)[0m  [1m[35mTRUNCATE TABLE "domains", "mailboxes" RESTART IDENTITY RESTRICT;[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "ar_internal_metadata" ENABLE TRIGGER ALL;ALTER TABLE "domains" ENABLE TRIGGER ALL;ALTER TABLE "mailboxes" ENABLE TRIGGER ALL[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Create (0.3ms)[0m  [1m[32mINSERT INTO "domains" ("domain_name", "password_expiration_frequency", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["domain_name", "example.com"], ["password_expiration_frequency", 30], ["created_at", "2024-05-29 12:47:32.891823"], ["updated_at", "2024-05-29 12:47:32.891823"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mDomain Load (0.2ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Create (0.5ms)[0m  [1m[32mINSERT INTO "mailboxes" ("domain_id", "username", "password", "scheduled_password_expiration", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["domain_id", 1], ["username", "user"], ["password", "password"], ["scheduled_password_expiration", nil], ["created_at", "2024-05-29 12:47:32.894118"], ["updated_at", "2024-05-29 12:47:32.894118"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/domains/1/mailboxes/1" for 127.0.0.1 at 2024-05-29 12:47:32 +0000
+Processing by MailboxesController#destroy as HTML
+  Parameters: {"domain_id"=>"1", "id"=>"1"}
+  [1m[36mDomain Load (0.1ms)[0m  [1m[34mSELECT "domains".* FROM "domains" WHERE "domains"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMailbox Load (0.2ms)[0m  [1m[34mSELECT "mailboxes".* FROM "mailboxes" WHERE "mailboxes"."domain_id" = $1 AND "mailboxes"."id" = $2 LIMIT $3[0m  [["domain_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mMailbox Destroy (0.1ms)[0m  [1m[31mDELETE FROM "mailboxes" WHERE "mailboxes"."id" = $1[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 2ms (ActiveRecord: 0.5ms | Allocations: 658)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
