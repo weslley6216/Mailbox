@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Mailboxes', type: :request do
-  let(:domain) { Domain.create!(domain_name: "example.com", password_expiration_frequency: 30) }
+  let(:domain) { Domain.create!(name: "example.com", password_expiration_frequency: 30) }
 
   context 'GET /domains/:domain_id/mailboxes' do
     it 'returns a success response' do
@@ -35,7 +35,7 @@ describe 'Mailboxes', type: :request do
 
   context 'GET /domains/:domain_id/mailboxes/:mailbox_id' do
     context 'when the mailbox exists' do
-      let(:mailbox) { Mailbox.create!(domain_id: domain.id, username: 'user', password: 'password') }
+      let(:mailbox) { Mailbox.create!(domain: domain, username: 'user', password: 'password') }
 
       it 'returns the mailbox' do
         get "/domains/#{domain.id}/mailboxes/#{mailbox.id}"

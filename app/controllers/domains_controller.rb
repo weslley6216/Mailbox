@@ -34,7 +34,7 @@ class DomainsController < ApplicationController
   private
 
   def domain_params
-    params.require(:domain).permit(:domain_name, :password_expiration_frequency)
+    params.require(:domain).permit(:name, :password_expiration_frequency)
   end
 
   def set_domain

@@ -11,7 +11,7 @@ describe 'Domains', type: :request do
 
   context 'POST /domains' do
     context 'with valid parameters' do
-      let(:params) { { domain: { domain_name: 'example.com', password_expiration_frequency: 30 } } }
+      let(:params) { { domain: { name: 'example.com', password_expiration_frequency: 30 } } }
 
       it 'creates a new domain' do
         post '/domains', params: params
@@ -21,7 +21,7 @@ describe 'Domains', type: :request do
     end
 
     context 'with invalid parameters' do
-      let(:params) { { domain: { domain_name: nil } } }
+      let(:params) { { domain: { name: nil } } }
 
       it 'does not create a new domain' do
         post '/domains', params: params
@@ -33,13 +33,13 @@ describe 'Domains', type: :request do
 
   context 'GET /domains/:id' do
     context 'when the domain exists' do
-      let(:domain) { Domain.create(domain_name: 'example.com', password_expiration_frequency: 30) }
+      let(:domain) { Domain.create(name: 'example.com', password_expiration_frequency: 30) }
 
       it 'returns the domain' do
         get "/domains/#{domain.id}"
 
         expect(response).to be_successful
-        expect(response.body).to include(domain.domain_name)
+        expect(response.body).to include(domain.name)
         expect(response.body).to include(domain.password_expiration_frequency.to_s)
       end
     end
@@ -54,7 +54,7 @@ describe 'Domains', type: :request do
   end
 
   context 'PUT /domains/:id' do
-    let(:domain) { Domain.create(domain_name: 'example.com', password_expiration_frequency: 30) }
+    let(:domain) { Domain.create(name: 'example.com', password_expiration_frequency: 30) }
 
     context 'with valid parameters' do
       it 'updates the domain' do
@@ -65,7 +65,7 @@ describe 'Domains', type: :request do
 
     context 'with invalid parameters' do
       it 'does not update the domain' do
-        put "/domains/#{domain.id}", params: { domain: { domain_name: nil } }
+        put "/domains/#{domain.id}", params: { domain: { name: nil } }
 
         expect(response).to have_http_status(422)
       end
@@ -73,7 +73,7 @@ describe 'Domains', type: :request do
   end
 
   context 'DELETE /domains/:id' do
-    let(:domain) { Domain.create(domain_name: "example.com", password_expiration_frequency: 30) }
+    let(:domain) { Domain.create(name: "example.com", password_expiration_frequency: 30) }
 
     it 'destroys the domain' do
       delete "/domains/#{domain.id}"

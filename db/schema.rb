@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_28_132045) do
   enable_extension "plpgsql"
 
   create_table "domains", force: :cascade do |t|
-    t.string "domain_name"
+    t.string "name"
     t.integer "password_expiration_frequency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_28_132045) do
   create_table "mailboxes", force: :cascade do |t|
     t.bigint "domain_id", null: false
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.date "scheduled_password_expiration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
