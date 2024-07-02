@@ -1,0 +1,43 @@
+# Ignore bundler config.
+/.bundle
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+
+# Ignore dotenv environment file (if you use dotenv for environment variables).
+.env
+
+# Ignore yarn integrity file
+/yarn-error.log
+/yarn-integrity
+
+# Ignore Mac and Linux file system files
+.DS_Store
+Thumbs.db
+
+# Ignore local configuration files
+/config/database.yml
+/config/master.key
+
+# Ignore public pack files
+/public/packs
+/public/packs-test
+
+# Ignore node_modules folder (if using webpacker or yarn for front-end assets)
+/node_modules
+
+# Ignore other default folders/files for Rails assets and caches
+/public/assets
+/public/packs
+/public/packs-test
+/tmp/cache
+/tmp/pids
+/tmp/sockets
+/vendor/
+/log/*.log
+

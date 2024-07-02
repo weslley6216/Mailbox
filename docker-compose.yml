@@ -9,6 +9,29 @@ services:
       - /var/lib/postgresql/data
     ports:
       - '5432:5432'
+  redis:
+    image: redis:alpine
+    command: redis-server
+    volumes:
+      - redis:/data
+    ports:
+      - 6379
+    logging:
+      driver: none
+  sidekiq:
+    build: .
+    command: bundle exec sidekiq
+    volumes:
+      - .:/opt/app
+    depends_on:
+      - redis
+  whenever:
+    build: .
+    command: bash -c "bundle exec whenever --update-crontab"
+    volumes:
+      - .:/app
+    depends_on:
+      - app
   app:
     build:
       context: .
@@ -22,6 +45,8 @@ services:
       - .env
     depends_on:
       - db
+      - redis
     command: bash -c 'bin/setup && rails server -b 0.0.0.0 -p 3000'
 volumes:
   rubygems:
+  redis:

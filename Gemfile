@@ -3,9 +3,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.3'
 gem 'rails', '~> 7.0.8', '>= 7.0.8.1'
-gem 'pg', '~> 1.1'
+gem 'pg', '~> 1.5', '>= 1.5.6'
 gem 'puma', '~> 5.0'
+gem 'sidekiq', '~> 7.3'
+gem 'redis'
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'pry-byebug', '~> 3.10', '>= 3.10.1'
