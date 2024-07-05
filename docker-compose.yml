@@ -11,31 +11,28 @@ services:
       - '5432:5432'
   redis:
     image: redis:alpine
-    command: redis-server
-    volumes:
-      - redis:/data
     ports:
-      - 6379
-    logging:
-      driver: none
+      - '6379:6379'
   sidekiq:
     build: .
     command: bundle exec sidekiq
     volumes:
       - .:/opt/app
     depends_on:
-      - redis
+      - app
+    env_file:
+      - .env
   whenever:
     build: .
-    command: bash -c "bundle exec whenever --update-crontab"
+    entrypoint: ["/usr/bin/entrypoint.sh"]
     volumes:
-      - .:/app
+      - .:/opt/app
     depends_on:
       - app
   app:
     build:
       context: .
-      dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile
     ports:
       - '3000:3000'
     volumes:
@@ -49,4 +46,3 @@ services:
     command: bash -c 'bin/setup && rails server -b 0.0.0.0 -p 3000'
 volumes:
   rubygems:
-  redis:
