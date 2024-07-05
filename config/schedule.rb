@@ -1,5 +1,9 @@
-set :output, "log/cron.log"
+ENV.each { |k, v| env(k, v) }
 
-every 1.day, at: '12:00 am' do
-  runner "ExpirePasswordJob.perform_now"
+env :PATH, ENV['PATH']
+set :environment, "development"
+set :output, "#{path}/log/cron.log"
+
+every 1.minute do
+  runner "ExpirePasswordJob.perform_later"
 end

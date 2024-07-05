@@ -1,7 +1,9 @@
 #!/bin/bash
-set -e
 
-# Remove a potentially pre-existing server.pid for Rails.
-rm -f /rails-app/tmp/pids/server.pid
+# Starts cron and updates tasks whenever
+service cron start
+bundle exec whenever --update-crontab
+crontab -l
 
-exec "$@"
+# Keeps the container active
+tail -f /dev/null
