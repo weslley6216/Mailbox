@@ -21,7 +21,7 @@
 Thumbs.db
 
 # Ignore local configuration files
-/config/database.yml
+/config/credentials.yml.enc
 /config/master.key
 
 # Ignore public pack files
