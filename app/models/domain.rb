@@ -1,5 +1,6 @@
 class Domain < ApplicationRecord
-  validates :name, :password_expiration_frequency, presence: true
-
   has_many :mailboxes
+
+  validates :name, presence: true
+  validates :password_expiration_frequency, presence: true, inclusion: { in: [30, 60, 90, 180] }
 end
