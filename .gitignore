@@ -39,4 +39,4 @@ Thumbs.db
 /tmp/pids
 /tmp/sockets
 /vendor/
-/log/
+/log/*.log
