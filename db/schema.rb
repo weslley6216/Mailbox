@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_05_28_132045) do
   create_table "mailboxes", force: :cascade do |t|
     t.bigint "domain_id", null: false
     t.string "username"
-    t.string "password_digest"
+    t.string "password"
     t.date "scheduled_password_expiration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

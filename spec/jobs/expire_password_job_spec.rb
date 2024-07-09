@@ -7,7 +7,7 @@ RSpec.describe ExpirePasswordJob, type: :job do
   it 'updates passwords for expired email boxes and increases scheduled_password_expiration by 90 days' do
     expect {
       perform_enqueued_jobs { ExpirePasswordJob.perform_later }
-    }.to change { mailbox.reload.password_digest }
+    }.to change { mailbox.reload.password }
      .and change { mailbox.scheduled_password_expiration }.by(90)
   end
 end
