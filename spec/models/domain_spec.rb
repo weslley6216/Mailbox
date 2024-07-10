@@ -1,4 +1,5 @@
-# spec/models/domain_spec.rb
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Domain, type: :model do

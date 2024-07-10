@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'Mailboxes', type: :request do
-  let(:domain) { Domain.create!(name: "example.com", password_expiration_frequency: 30) }
+  let(:domain) { Domain.create!(name: 'example.com', password_expiration_frequency: 30) }
 
   context 'GET /domains/:domain_id/mailboxes' do
     context 'when there are mailboxes' do
-      let!(:mailbox_one) { Mailbox.create!(domain: domain, username: 'user_one', password: 'password') }
-      let!(:mailbox_two) { Mailbox.create!(domain: domain, username: 'user_two', password: 'password') }
+      let!(:mailbox_one) { Mailbox.create!(domain:, username: 'user_one', password: 'password') }
+      let!(:mailbox_two) { Mailbox.create!(domain:, username: 'user_two', password: 'password') }
 
       it 'returns a success response with the mailboxes' do
         get "/domains/#{domain.id}/mailboxes"
@@ -37,7 +39,7 @@ describe 'Mailboxes', type: :request do
 
       it 'creates a new mailbox' do
         expect {
-          post "/domains/#{domain.id}/mailboxes", params: params
+          post "/domains/#{domain.id}/mailboxes", params:
         }.to change(Mailbox, :count).by(1)
 
         json_response = JSON.parse(response.body, symbolize_names: true)
@@ -52,9 +54,9 @@ describe 'Mailboxes', type: :request do
 
     context 'with invalid parameters' do
       let(:params) { { mailbox: { username: nil } } }
-      
+
       it 'does not create a new mailbox' do
-        post "/domains/#{domain.id}/mailboxes", params: params
+        post("/domains/#{domain.id}/mailboxes", params:)
 
         expect(response).to have_http_status(422)
       end
@@ -63,7 +65,7 @@ describe 'Mailboxes', type: :request do
 
   context 'GET /domains/:domain_id/mailboxes/:mailbox_id' do
     context 'when the mailbox exists' do
-      let(:mailbox) { Mailbox.create!(domain: domain, username: 'user', password: 'password') }
+      let(:mailbox) { Mailbox.create!(domain:, username: 'user', password: 'password') }
 
       it 'returns the mailbox' do
         get "/domains/#{domain.id}/mailboxes/#{mailbox.id}"
@@ -90,7 +92,7 @@ describe 'Mailboxes', type: :request do
       let(:params) { { mailbox: { username: 'new-user', password: 'new-password' } } }
 
       it 'updates the mailbox' do
-        put "/domains/#{domain.id}/mailboxes/#{mailbox.id}", params: params
+        put("/domains/#{domain.id}/mailboxes/#{mailbox.id}", params:)
 
         json_response = JSON.parse(response.body, symbolize_names: true)
 
@@ -107,7 +109,7 @@ describe 'Mailboxes', type: :request do
       let(:params) { { mailbox: { username: nil } } }
 
       it 'does not update the mailbox' do
-        put "/domains/#{domain.id}/mailboxes/#{mailbox.id}", params: params
+        put("/domains/#{domain.id}/mailboxes/#{mailbox.id}", params:)
 
         expect(response).to have_http_status(422)
       end
@@ -116,14 +118,13 @@ describe 'Mailboxes', type: :request do
 
   context 'DELETE /domains/:domain_id/mailboxes/:id' do
     let!(:mailbox) { Mailbox.create(domain_id: domain.id, username: 'user', password: 'password') }
-  
+
     it 'destroys the mailbox' do
-      expect {
+      expect do
         delete "/domains/#{domain.id}/mailboxes/#{mailbox.id}"
-      }.to change { Mailbox.count }.by(-1)
-  
+      end.to change { Mailbox.count }.by(-1)
+
       expect(response).to have_http_status(204)
     end
   end
-  
 end

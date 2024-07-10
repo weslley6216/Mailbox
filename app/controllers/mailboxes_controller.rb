@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MailboxesController < ApplicationController
   before_action :set_domain
   before_action :set_mailbox, only: %i[show update destroy]

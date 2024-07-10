@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class DomainsController < ApplicationController
-  before_action :set_domain, only: [:show, :update, :destroy]
+  before_action :set_domain, only: %i[show update destroy]
 
   def index
     @domains = Domain.all

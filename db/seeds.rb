@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # seeds.rb
 
 # Domain creation with password expiration frequency
@@ -13,5 +15,3 @@ Mailbox.create(domain: domain3, username: 'user3', password: 'password', schedul
 Mailbox.create(domain: domain4, username: 'user4', password: 'password', scheduled_password_expiration: 1.day.ago)
 
 puts 'Seed data created successfully'
-
-Mailbox.pluck(:scheduled_password_expiration).map { |date| date.strftime("%d/%m/%Y") }

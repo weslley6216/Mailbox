@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ExpirePasswordJob < ApplicationJob
   queue_as :default
 

@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Mailbox, type: :model do
   let(:domain) { Domain.create!(name: 'example.com', password_expiration_frequency: 90) }
-  let(:mailbox) { Mailbox.create!(username: 'user', password: 'password', 
-                                  domain: domain, scheduled_password_expiration: 30.days.from_now) }
+  let(:mailbox) { Mailbox.create!(username: 'user', password: 'password', domain:, scheduled_password_expiration: 30.days.from_now) }
 
   describe 'associations' do
     it { should belong_to(:domain) }
@@ -16,8 +17,7 @@ RSpec.describe Mailbox, type: :model do
   end
 
   describe 'callbacks' do
-    let(:mailbox) { Mailbox.new(username: 'user', password: 'password', 
-                                    domain: domain, scheduled_password_expiration: 30.days.from_now) }
+    let(:mailbox) { Mailbox.new(username: 'user', password: 'password', domain:, scheduled_password_expiration: 30.days.from_now) }
 
     it 'hashes the password before validation' do
       mailbox.valid?

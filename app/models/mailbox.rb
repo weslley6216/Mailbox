@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Mailbox < ApplicationRecord
   belongs_to :domain
 

@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'Domains', type: :request do
   context 'GET /domains' do
     it 'returns a success response when there are domains' do
       Domain.create!(name: 'example.com', password_expiration_frequency: 30)
-      
+
       get '/domains'
 
       json_response = JSON.parse(response.body)
@@ -30,7 +32,7 @@ describe 'Domains', type: :request do
 
       it 'creates a new domain' do
         expect {
-          post '/domains', params: params
+          post '/domains', params:
         }.to change(Domain, :count).by(1)
 
         json_response = JSON.parse(response.body, symbolize_names: true)
@@ -45,7 +47,7 @@ describe 'Domains', type: :request do
       let(:params) { { domain: { name: nil } } }
 
       it 'does not create a new domain' do
-        post '/domains', params: params
+        post('/domains', params:)
 
         expect(response).to have_http_status(422)
       end
@@ -79,7 +81,7 @@ describe 'Domains', type: :request do
 
     context 'with valid parameters' do
       it 'updates the domain' do
-        put "/domains/#{domain.id}", params: { domain: {  name: 'new-example.com', password_expiration_frequency: 60 } }
+        put "/domains/#{domain.id}", params: { domain: { name: 'new-example.com', password_expiration_frequency: 60 } }
 
         expect(response).to have_http_status(200)
         expect(domain.reload.name).to eq('new-example.com')
@@ -97,7 +99,7 @@ describe 'Domains', type: :request do
   end
 
   context 'DELETE /domains/:id' do
-    let!(:domain) { Domain.create(name: "example.com", password_expiration_frequency: 30) }
+    let!(:domain) { Domain.create(name: 'example.com', password_expiration_frequency: 30) }
 
     it 'destroys the domain' do
       expect {

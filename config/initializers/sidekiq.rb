@@ -1,4 +1,6 @@
-sidekiq_config = { url: "redis://redis:6379/12" }
+# frozen_string_literal: true
+
+sidekiq_config = { url: 'redis://redis:6379/12' }
 
 Sidekiq.configure_server do |config|
   config.redis = sidekiq_config

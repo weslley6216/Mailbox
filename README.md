@@ -70,7 +70,7 @@ Para verificar que a atualização agendada de expiração de senhas está funci
   ```
 3. Verifique as datas agendadas no passado, devem retornar 4 registros no dia de ontem como definido no arquivo de db/seed:
   ```bash
-  Mailbox.pluck(:scheduled_password_expiration).map { |date| date.strftime("%d/%m/%Y") }
+  Mailbox.pluck(:scheduled_password_expiration).map { |date| date.strftime('%d/%m/%Y') }
   ```
 4. Acesse o seguinte endpoint no seu navegador: [http://localhost:3000/sidekiq](http://localhost:3000/sidekiq), o número de jobs processados deve ser 0, como na imagem abaixo:
 
@@ -82,6 +82,6 @@ Para verificar que a atualização agendada de expiração de senhas está funci
 
 6. Retorne ao rails console e execute novamente o comando para verificar as novas datas de expiração agendadas:
   ```bash
-  Mailbox.pluck(:scheduled_password_expiration).map { |date| date.strftime("%d/%m/%Y") }
+  Mailbox.pluck(:scheduled_password_expiration).map { |date| date.strftime('%d/%m/%Y') }
   ```
 Retornará no console quatro datas agendadas, cada uma com 30, 60, 90 e 120 dias após a data original de agendamento.
