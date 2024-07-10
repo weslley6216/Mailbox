@@ -5,23 +5,23 @@ class MailboxesController < ApplicationController
   def index
     @mailboxes = @domain.mailboxes
 
-    render json: @mailboxes, status: :ok
+    render json: @mailboxes.as_json(except: [:password]), status: :ok
   end
 
   def create
     @mailbox = @domain.mailboxes.new(mailbox_params)
 
-    return render json: @mailbox, status: :created if @mailbox.save
+    return render json: @mailbox.as_json(except: [:password]), status: :created if @mailbox.save
 
     render json: @mailbox.errors, status: :unprocessable_entity
   end
 
   def show
-    render json: @mailbox
+    render json: @mailbox.as_json(except: [:password])
   end
 
   def update
-    return render json: @mailbox if @mailbox.update(mailbox_params)
+    return render json: @mailbox.as_json(except: [:password]) if @mailbox.update(mailbox_params)
 
     render json: @mailbox.errors, status: :unprocessable_entity
   end
