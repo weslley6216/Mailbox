@@ -50,12 +50,12 @@ Esta aplicação é uma API backend desenvolvida em Ruby on Rails que gerencia d
    git clone https://github.com/weslley6216/mailbox-manager.git
    cd mailbox-manager
    ```
-2. Construa e inicie os containers Docker:
+2. Renomeie o arquivo `.env-example` para `.env`
+3. Construa e inicie os containers Docker:
   ```bash
   docker-compose up --build
   ```
-3. Acesse a aplicação em `http://localhost:3000`
-
+4. Acesse a aplicação em `http://localhost:3000`
 
 ## Testando Atualização Agendada de Expiração de Senhas
 Para verificar que a atualização agendada de expiração de senhas está funcionando corretamente, siga os passos abaixo:
